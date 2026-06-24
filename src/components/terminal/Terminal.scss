@@ -1,0 +1,96 @@
+@import "../../_globalColor";
+
+.terminal {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  max-width: 600px;
+  width: 100%;
+}
+
+.terminal-header {
+  background: #2d2d2d;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-btn-red { background: #ff5f57; }
+.terminal-btn-yellow { background: #ffbd2e; }
+.terminal-btn-green { background: #28c840; }
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
+.terminal-spacer {
+  width: 52px;
+}
+
+.terminal-body {
+  background: #1a1a2e;
+  padding: 20px;
+  min-height: 220px;
+}
+
+.terminal-line {
+  margin-bottom: 6px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.terminal-cmd {
+  color: #e2e8f0;
+}
+
+.terminal-output {
+  color: #22c55e;
+  padding-left: 18px;
+}
+
+.terminal-prompt {
+  color: #a78bfa;
+  font-weight: 700;
+}
+
+.terminal-cursor {
+  color: #a78bfa;
+  animation: termBlink 1s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes termBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .terminal {
+    max-width: 100%;
+  }
+
+  .terminal-body {
+    padding: 14px;
+    min-height: 180px;
+  }
+
+  .terminal-line {
+    font-size: 12px;
+  }
+}

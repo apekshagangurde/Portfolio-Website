@@ -5,7 +5,7 @@ import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import TypingAnimation from "../../components/typingAnimation/TypingAnimation";
+import Terminal from "../../components/terminal/Terminal";
 
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
@@ -21,27 +21,9 @@ export default function Greeting() {
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
-              </h1>
-              <p
-                className={
-                  isDark
-                    ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
-                }
-              >
-                <TypingAnimation
-                  text={greeting.subTitlePlain}
-                  speed={25}
-                  delay={600}
-                />
-                {" "}{emoji("🚀")}
-              </p>
+              <div className="terminal-wrapper">
+                <Terminal />
+              </div>
               {greeting.currentlyWorkingOn && (
                 <a
                   href={greeting.currentlyWorkingOnUrl}
@@ -56,16 +38,6 @@ export default function Greeting() {
                 </a>
               )}
               <SocialMedia />
-              {/* <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
-                {greeting.resumeLink && (
-                  <Button
-                    text="See my resume"
-                    newTab={true}
-                    href={greeting.resumeLink}
-                  />
-                )}
-              </div> */}
             </div>
           </div>
           <div className="greeting-image-div">

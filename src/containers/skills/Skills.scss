@@ -21,8 +21,22 @@
 }
 
 .skills-heading {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 56px;
   font-weight: 400;
+  background: $headingGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  padding: 0.15em 0;
+  line-height: 1.2;
+}
+.dark-mode .skills-heading {
+  background: $headingGradientDark;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .subTitle {
   color: $subTitle;

@@ -6,6 +6,7 @@ import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
+import TypingAnimation from "../../components/typingAnimation/TypingAnimation";
 
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
@@ -35,7 +36,12 @@ export default function Greeting() {
                     : "greeting-text-p subTitle"
                 }
               >
-                {greeting.subTitle}
+                <TypingAnimation
+                  text={greeting.subTitlePlain}
+                  speed={25}
+                  delay={600}
+                />
+                {" "}{emoji("🚀")}
               </p>
               <SocialMedia />
               <div className="button-greeting-div">

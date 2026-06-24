@@ -13,6 +13,13 @@
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
+  animation: skillFloat 3s ease-in-out infinite;
+  animation-delay: calc(var(--skill-index) * 0.2s);
+}
+
+@keyframes skillFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .software-skill-inline > i {
@@ -38,7 +45,8 @@
 }
 
 .software-skill-inline:hover .skill-image {
-  transform: scale(1.15);
+  transform: scale(1.2) rotate(5deg);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-link {

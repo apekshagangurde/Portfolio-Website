@@ -11,6 +11,42 @@
   padding: 20px 10px;
   margin: 0px auto;
   margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 50%, rgba(85, 25, 139, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(100, 91, 235, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 80%, rgba(140, 67, 206, 0.05) 0%, transparent 50%);
+    animation: heroGradientMove 15s ease-in-out infinite alternate;
+    z-index: 0;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.dark-mode .greet-main::before {
+  background: radial-gradient(circle at 20% 50%, rgba(167, 139, 250, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(129, 140, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(192, 132, 252, 0.06) 0%, transparent 50%);
+}
+
+@keyframes heroGradientMove {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -20px) rotate(2deg); }
+  66% { transform: translate(-20px, 15px) rotate(-1deg); }
+  100% { transform: translate(10px, -10px) rotate(1deg); }
 }
 
 .greeting-main {
@@ -35,9 +71,21 @@
 }
 
 .greeting-text {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 70px;
-  line-height: 1.1;
-  color: $textColor !important;
+  line-height: 1.2;
+  background: $headingGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  padding: 0.1em 0;
+}
+.dark-mode .greeting-text {
+  background: $headingGradientDark;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .greeting-text-p {

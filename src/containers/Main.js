@@ -19,6 +19,8 @@ import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
+import CustomCursor from "../components/customCursor/CustomCursor";
+import StatsCounter from "./statsCounter/StatsCounter";
 import "./Main.scss";
 
 const Main = () => {
@@ -49,10 +51,12 @@ const Main = () => {
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (
-          <>
+          <div className="main-content-enter">
+            <CustomCursor />
             <Header />
             <Greeting />
             <Skills />
+            <StatsCounter />
             <StackProgress />
             <Education />
             <WorkExperience />
@@ -66,7 +70,7 @@ const Main = () => {
             <Profile />
             <Footer />
             <ScrollToTopButton />
-          </>
+          </div>
         )}
       </StyleProvider>
     </div>

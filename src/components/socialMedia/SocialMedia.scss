@@ -25,61 +25,97 @@
   user-select: none;
   width: 2.6rem;
   margin-bottom: 10px;
-  transition: 0.2s ease-in;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .facebook i {
+  background-color: $subTitle;
+}
+.facebook i:hover {
   background-color: $faceBook;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(59, 89, 152, 0.4);
 }
 
 .linkedin i {
+  background-color: $subTitle;
+}
+.linkedin i:hover {
   background-color: $linkedin;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(14, 118, 168, 0.4);
 }
 
 .github i {
+  background-color: $subTitle;
+}
+.github i:hover {
   background-color: $github;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.4);
 }
 
 .gitlab i {
+  background-color: $subTitle;
+}
+.gitlab i:hover {
   background-color: $gitlab;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(252, 163, 38, 0.4);
 }
 
 .google i {
+  background-color: $subTitle;
+}
+.google i:hover {
   background-color: $google;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(234, 67, 53, 0.4);
 }
 
 .twitter i {
+  background-color: $subTitle;
+}
+.twitter i:hover {
   background-color: $twitter;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.4);
 }
 
 .medium i {
+  background-color: $subTitle;
+}
+.medium i:hover {
   background-color: $medium;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .stack-overflow i {
+  background-color: $subTitle;
+}
+.stack-overflow i:hover {
   background-color: $stackoverflow;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(244, 128, 36, 0.4);
 }
 
 .kaggle i {
+  background-color: $subTitle;
+}
+.kaggle i:hover {
   background-color: $kaggle;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(32, 190, 255, 0.4);
 }
 
 .instagram i {
-  background-color: $instagram;
+  background-color: $subTitle;
 }
-
-/* Hover Transition */
-.twitter i:hover,
-.google i:hover,
-.gitlab i:hover,
-.github i:hover,
-.linkedin i:hover,
-.facebook i:hover,
-.instagram i:hover,
-.stack-overflow i:hover,
-.kaggle i:hover,
-.medium i:hover {
-  background-color: $textColor;
+.instagram i:hover {
+  background-color: $instagram;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(193, 53, 132, 0.4);
 }
 
 /* Media Query */

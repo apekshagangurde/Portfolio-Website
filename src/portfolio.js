@@ -25,6 +25,8 @@ const greeting = {
   subTitle: emoji(
     "A Full Stack Developer who doesn't just use AI — I build with it, ship with it, and push its limits every day. I turn wild ideas into real-world web & mobile apps, powered by code and supercharged by intelligence. 🚀"
   ),
+  subTitlePlain:
+    "A Full Stack Developer who doesn't just use AI — I build with it, ship with it, and push its limits every day. I turn wild ideas into real-world web & mobile apps, powered by code and supercharged by intelligence.",
   resumeLink:
     "https://drive.google.com/file/d/1Co10jIUl5W1M3IbXRdLBgGTjPUvswT4X/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -163,6 +165,18 @@ https://fontawesome.com/icons?d=gallery */
     }
   ],
   display: true // Set false to hide this section, defaults to true
+};
+
+// Stats Section
+
+const statsSection = {
+  title: "What I've Accomplished",
+  stats: [
+    {label: "Projects", value: 5, suffix: "+"},
+    {label: "Hackathons", value: 2, suffix: "+"},
+    {label: "DSA Problems", value: 500, suffix: "+"}
+  ],
+  display: false
 };
 
 // Education Section
@@ -438,5 +452,6 @@ export {
   podcastSection,
   contactInfo,
   twitterDetails,
-  isHireable
+  isHireable,
+  statsSection
 };

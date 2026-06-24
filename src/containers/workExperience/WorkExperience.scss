@@ -1,12 +1,22 @@
-.experience-cards-div {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+@import "../../_globalColor";
 
 .experience-heading {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 56px;
   font-weight: 400;
+  background: $headingGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  padding: 0.15em 0;
+  line-height: 1.2;
+}
+.dark-mode .experience-heading {
+  background: $headingGradientDark;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .experience-container {
@@ -21,6 +31,64 @@
   flex: 1;
 }
 
+.experience-timeline {
+  position: relative;
+  padding: 2rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, $buttonColor, $skillsColor);
+    border-radius: 2px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-left {
+  left: 0;
+  padding-right: 3rem;
+}
+
+.timeline-right {
+  left: 50%;
+  padding-left: 3rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: $buttonColor;
+  border: 3px solid white;
+  border-radius: 50%;
+  top: 2rem;
+  z-index: 1;
+}
+
+.timeline-left .timeline-dot {
+  right: -8px;
+}
+
+.timeline-right .timeline-dot {
+  left: -8px;
+}
+
+.dark-mode .timeline-dot {
+  border-color: $darkBackground;
+  background: $skillsColor;
+}
+
 /* Media Query */
 
 @media (max-width: 1380px) {
@@ -33,5 +101,24 @@
   .experience-heading {
     font-size: 30px;
     text-align: center;
+  }
+
+  .experience-timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item,
+  .timeline-left,
+  .timeline-right {
+    width: 100%;
+    left: 0;
+    padding-left: 50px;
+    padding-right: 1rem;
+  }
+
+  .timeline-left .timeline-dot,
+  .timeline-right .timeline-dot {
+    left: 12px;
+    right: auto;
   }
 }

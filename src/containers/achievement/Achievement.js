@@ -36,17 +36,18 @@ export default function Achievement() {
           <div className="achievement-cards-div">
             {achievementSection.achievementsCards.map((card, i) => {
               return (
-                <AchievementCard
-                  key={i}
-                  isDark={isDark}
-                  cardInfo={{
-                    title: card.title,
-                    description: card.subtitle,
-                    image: card.image,
-                    imageAlt: card.imageAlt,
-                    footer: card.footerLink
-                  }}
-                />
+                <Fade bottom duration={1000} distance="30px" delay={i * 150} key={i}>
+                  <AchievementCard
+                    isDark={isDark}
+                    cardInfo={{
+                      title: card.title,
+                      description: card.subtitle,
+                      image: card.image,
+                      imageAlt: card.imageAlt,
+                      footer: card.footerLink
+                    }}
+                  />
+                </Fade>
               );
             })}
           </div>

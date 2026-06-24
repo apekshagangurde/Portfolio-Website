@@ -14,24 +14,26 @@ export default function WorkExperience() {
           <div className="experience-container" id="workExperience">
             <div>
               <h1 className="experience-heading">Experiences</h1>
-              <div className="experience-cards-div">
-                {workExperiences.experience.map((card, i) => {
-                  return (
-                    <ExperienceCard
-                      key={i}
-                      isDark={isDark}
-                      cardInfo={{
-                        company: card.company,
-                        desc: card.desc,
-                        date: card.date,
-                        companylogo: card.companylogo,
-                        companyUrl: card.companyUrl,
-                        role: card.role,
-                        descBullets: card.descBullets
-                      }}
-                    />
-                  );
-                })}
+              <div className="experience-timeline">
+                {workExperiences.experience.map((card, i) => (
+                  <Fade bottom duration={1000} distance="30px" delay={i * 200} key={i}>
+                    <div className={`timeline-item ${i % 2 === 0 ? "timeline-left" : "timeline-right"}`}>
+                      <div className="timeline-dot"></div>
+                      <ExperienceCard
+                        isDark={isDark}
+                        cardInfo={{
+                          company: card.company,
+                          desc: card.desc,
+                          date: card.date,
+                          companylogo: card.companylogo,
+                          companyUrl: card.companyUrl,
+                          role: card.role,
+                          descBullets: card.descBullets
+                        }}
+                      />
+                    </div>
+                  </Fade>
+                ))}
               </div>
             </div>
           </div>

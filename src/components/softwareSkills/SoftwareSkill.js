@@ -1,4 +1,5 @@
 import React from "react";
+import {Fade} from "react-reveal";
 import "./SoftwareSkill.scss";
 import {skillsSection} from "../../portfolio";
 
@@ -10,9 +11,9 @@ export default function SoftwareSkill() {
           {skillsSection.softwareSkills.map((skills, i) => {
             const content = (
               <li
-                key={i}
                 className="software-skill-inline"
                 name={skills.skillName}
+                style={{"--skill-index": i}}
               >
                 {skills.imageSrc ? (
                   <img
@@ -27,20 +28,24 @@ export default function SoftwareSkill() {
               </li>
             );
 
-            if (skills.docLink) {
-              return (
-                <a
-                  key={i}
-                  href={skills.docLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="skill-link"
-                >
-                  {content}
-                </a>
-              );
-            }
-            return content;
+            const wrapped = skills.docLink ? (
+              <a
+                href={skills.docLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="skill-link"
+              >
+                {content}
+              </a>
+            ) : (
+              content
+            );
+
+            return (
+              <Fade bottom duration={800} delay={i * 80} key={i}>
+                {wrapped}
+              </Fade>
+            );
           })}
         </ul>
       </div>

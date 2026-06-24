@@ -45,9 +45,11 @@
 }
 .project-card-light:hover {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-8px);
 }
 .project-card-dark:hover {
   box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+  transform: translateY(-8px);
 }
 .project-image {
   position: relative;
@@ -56,6 +58,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+
+  &::after {
+    content: 'View Project →';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(85, 25, 139, 0.85);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  .card-image {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover .card-image {
+    transform: scale(1.1);
+  }
 }
 
 .projects-container {

@@ -35,8 +35,8 @@ export default function StartupProject() {
           <div className="projects-container">
             {bigProjects.projects.map((project, i) => {
               return (
+                <Fade bottom duration={1000} distance="30px" delay={i * 150} key={i}>
                 <div
-                  key={i}
                   className={
                     isDark
                       ? "dark-mode project-card project-card-dark"
@@ -84,6 +84,7 @@ export default function StartupProject() {
                     ) : null}
                   </div>
                 </div>
+                </Fade>
               );
             })}
           </div>

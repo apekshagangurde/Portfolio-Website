@@ -1,6 +1,21 @@
 @import "../../_globalColor";
 
-.experience-heading {
+// Header
+.metro-section {
+  width: 90%;
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 20px 10px;
+}
+
+.metro-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.metro-heading {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 56px;
   font-weight: 400;
@@ -11,114 +26,360 @@
   display: inline-block;
   padding: 0.15em 0;
   line-height: 1.2;
+  margin: 0;
 }
-.dark-mode .experience-heading {
+
+.dark-mode .metro-heading {
   background: $headingGradientDark;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.experience-container {
+.metro-line-badge {
   display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  align-items: center;
+  gap: 8px;
+  background: rgba(85, 25, 139, 0.08);
+  border: 1px solid rgba(85, 25, 139, 0.15);
+  border-radius: 50px;
+  padding: 6px 16px;
 }
 
-.experience-container > * {
-  flex: 1;
+.dark-mode .metro-line-badge {
+  background: rgba(167, 139, 250, 0.1);
+  border-color: rgba(167, 139, 250, 0.2);
 }
 
-.experience-timeline {
+.metro-line-icon {
+  color: $buttonColor;
+  font-size: 10px;
+}
+
+.dark-mode .metro-line-icon {
+  color: #a78bfa;
+}
+
+.metro-line-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $buttonColor;
+}
+
+.dark-mode .metro-line-name {
+  color: #a78bfa;
+}
+
+// Map
+.metro-map {
   position: relative;
-  padding: 2rem 0;
+  padding-left: 40px;
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, $buttonColor, $skillsColor);
-    border-radius: 2px;
+.metro-track {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, $buttonColor, $skillsColor, rgba(100, 91, 235, 0.2));
+  border-radius: 4px;
+}
+
+.dark-mode .metro-track {
+  background: linear-gradient(to bottom, #a78bfa, $skillsColor, rgba(167, 139, 250, 0.15));
+}
+
+// Station
+.metro-station {
+  position: relative;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.metro-station-dot-area {
+  position: absolute;
+  left: -40px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+}
+
+.metro-station-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $lightBackground1;
+  border: 4px solid $buttonColor;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode .metro-station-dot {
+  background: $darkBackground;
+  border-color: #a78bfa;
+}
+
+.metro-station:hover .metro-station-dot {
+  transform: scale(1.3);
+}
+
+.metro-station-current {
+  background: $buttonColor;
+  border-color: $buttonColor;
+  width: 20px;
+  height: 20px;
+}
+
+.dark-mode .metro-station-current {
+  background: #a78bfa;
+  border-color: #a78bfa;
+}
+
+.metro-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $buttonColor;
+  animation: metroPulse 2s ease-in-out infinite;
+}
+
+.dark-mode .metro-pulse {
+  background: #a78bfa;
+}
+
+@keyframes metroPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(85, 25, 139, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(85, 25, 139, 0); }
+}
+
+
+.metro-you-are-here {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: $buttonColor;
+  margin-top: 6px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.dark-mode .metro-you-are-here {
+  color: #a78bfa;
+}
+
+// Card
+.metro-card {
+  background: $lightBackground2;
+  border: 1px solid $lightBorder1;
+  border-radius: 14px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.metro-card:hover {
+  box-shadow: 0 8px 25px rgba(85, 25, 139, 0.1);
+}
+
+.metro-card-dark {
+  background: #1e1e2e;
+  border-color: rgba(255, 255, 255, 0.08);
+
+  &:hover {
+    box-shadow: 0 8px 25px rgba(167, 139, 250, 0.1);
   }
 }
 
-.timeline-item {
+.metro-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.metro-logo-link {
+  flex-shrink: 0;
+}
+
+.metro-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.metro-card-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metro-role {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: $textColor;
+}
+
+.dark-mode .metro-role {
+  color: $textColorDark;
+}
+
+.metro-company {
+  font-size: 14px;
+  font-weight: 500;
+  color: $buttonColor;
+}
+
+.dark-mode .metro-company {
+  color: #a78bfa;
+}
+
+.metro-date {
+  font-size: 12px;
+  color: $subTitle;
+}
+
+.metro-expand-icon {
+  font-size: 18px;
+  color: $subTitle;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.metro-expand-open {
+  transform: rotate(180deg);
+}
+
+// Details
+.metro-card-details {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: metroSlideDown 0.3s ease;
+}
+
+.metro-card-dark .metro-card-details {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+@keyframes metroSlideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 600px;
+    transform: translateY(0);
+  }
+}
+
+.metro-bullet {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.metro-bullet-dot {
+  color: $buttonColor;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.dark-mode .metro-bullet-dot {
+  color: #a78bfa;
+}
+
+.metro-bullet-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: $cardSubtitle;
+}
+
+.dark-mode .metro-bullet-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+// Terminus
+.metro-terminus {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 0;
   position: relative;
-  width: 50%;
-  padding: 1rem 2rem;
-  box-sizing: border-box;
 }
 
-.timeline-left {
-  left: 0;
-  padding-right: 3rem;
+.metro-terminus-dot {
+  width: 12px;
+  height: 12px;
+  border-width: 3px;
+  margin-left: -38px;
+  opacity: 0.4;
 }
 
-.timeline-right {
-  left: 50%;
-  padding-left: 3rem;
+.metro-terminus-label {
+  font-size: 13px;
+  color: $subTitle;
+  font-style: italic;
 }
 
-.timeline-dot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: $buttonColor;
-  border: 3px solid white;
-  border-radius: 50%;
-  top: 2rem;
-  z-index: 1;
-}
-
-.timeline-left .timeline-dot {
-  right: -8px;
-}
-
-.timeline-right .timeline-dot {
-  left: -8px;
-}
-
-.dark-mode .timeline-dot {
-  border-color: $darkBackground;
-  background: $skillsColor;
-}
-
-/* Media Query */
-
+// Responsive
 @media (max-width: 1380px) {
-  .experience-heading {
+  .metro-heading {
     font-size: 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .experience-heading {
+  .metro-heading {
     font-size: 30px;
-    text-align: center;
   }
 
-  .experience-timeline::before {
-    left: 20px;
+  .metro-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
-  .timeline-item,
-  .timeline-left,
-  .timeline-right {
-    width: 100%;
-    left: 0;
-    padding-left: 50px;
-    padding-right: 1rem;
+  .metro-section {
+    width: 95%;
   }
 
-  .timeline-left .timeline-dot,
-  .timeline-right .timeline-dot {
-    left: 12px;
-    right: auto;
+  .metro-map {
+    padding-left: 36px;
+  }
+
+  .metro-station-dot-area {
+    left: -36px;
+  }
+
+  .metro-role {
+    font-size: 16px;
+  }
+
+  .metro-logo {
+    width: 40px;
+    height: 40px;
   }
 }

@@ -1,95 +1,87 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useContext} from "react";
 import "./Blog.scss";
-import BlogCard from "../../components/blogCard/BlogCard";
 import {blogSection} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
-  const [mediumBlogs, setMediumBlogs] = useState([]);
-  function setMediumBlogsFunction(array) {
-    setMediumBlogs(array);
-  }
-  //Medium API returns blogs' content in HTML format. Below function extracts blogs' text content within paragraph tags
-  function extractTextContent(html) {
-    return typeof html === "string"
-      ? html
-          .split("p>")
-          .filter(el => !el.includes(">"))
-          .map(el => el.replace("</", ".").replace("<", ""))
-          .join(" ")
-      : NaN;
-  }
-  useEffect(() => {
-    if (blogSection.displayMediumBlogs === "true") {
-      const getProfileData = () => {
-        fetch("/blogs.json")
-          .then(result => {
-            if (result.ok) {
-              return result.json();
-            }
-          })
-          .then(response => {
-            setMediumBlogsFunction(response.items);
-          })
-          .catch(function (error) {
-            console.error(
-              `${error} (because of this error Blogs section could not be displayed. Blogs section has reverted to default)`
-            );
-            setMediumBlogsFunction("Error");
-            blogSection.displayMediumBlogs = "false";
-          });
-      };
-      getProfileData();
-    }
-  }, []);
+
   if (!blogSection.display) {
     return null;
   }
+
+  const today = new Date();
+  const dateStr = today.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+
+  const blogs = blogSection.blogs;
+  const headline = blogs[0];
+  const rest = blogs.slice(1);
+
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="blogs">
-        <div className="blog-header">
-          <h1 className="blog-header-text">{blogSection.title}</h1>
-          <p
-            className={
-              isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"
-            }
-          >
-            {blogSection.subtitle}
-          </p>
-        </div>
-        <div className="blog-main-div">
-          <div className="blog-text-div">
-            {blogSection.displayMediumBlogs !== "true" ||
-            mediumBlogs === "Error"
-              ? blogSection.blogs.map((blog, i) => {
-                  return (
-                    <BlogCard
-                      key={i}
-                      isDark={isDark}
-                      blog={{
-                        url: blog.url,
-                        image: blog.image,
-                        title: blog.title,
-                        description: blog.description
-                      }}
-                    />
-                  );
-                })
-              : mediumBlogs.map((blog, i) => {
-                  return (
-                    <BlogCard
-                      key={i}
-                      isDark={isDark}
-                      blog={{
-                        url: blog.link,
-                        title: blog.title,
-                        description: extractTextContent(blog.content)
-                      }}
-                    />
-                  );
-                })}
+      <div className="newspaper-section" id="blogs">
+        <div className={isDark ? "newspaper newspaper-dark" : "newspaper"}>
+          <div className="newspaper-header">
+            <div className="newspaper-rule"></div>
+            <div className="newspaper-masthead">
+              <span className="newspaper-edition">EST. 2023 — NASHIK EDITION</span>
+              <h1 className="newspaper-title">THE APEKSHA TIMES</h1>
+              <span className="newspaper-date">{dateStr} • "All the code that's fit to ship"</span>
+            </div>
+            <div className="newspaper-rule"></div>
+          </div>
+
+          <div className="newspaper-body">
+            {headline && (
+              <a
+                href={headline.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="newspaper-headline-link"
+              >
+                <div className="newspaper-headline">
+                  <h2 className="newspaper-headline-text">{headline.title}</h2>
+                  <p className="newspaper-headline-desc">{headline.description}</p>
+                  <span className="newspaper-read-more">Read full story →</span>
+                </div>
+              </a>
+            )}
+
+            <div className="newspaper-divider"></div>
+
+            <div className="newspaper-columns">
+              {rest.map((blog, i) => (
+                <a
+                  key={i}
+                  href={blog.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="newspaper-article-link"
+                >
+                  <div className="newspaper-article">
+                    <h3 className="newspaper-article-title">{blog.title}</h3>
+                    <p className="newspaper-article-desc">{blog.description}</p>
+                    <span className="newspaper-read-more">Read full story →</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="newspaper-footer-bar">
+            <span>TECH</span>
+            <span>•</span>
+            <span>OPEN SOURCE</span>
+            <span>•</span>
+            <span>ENGINEERING</span>
+            <span>•</span>
+            <span>AI / ML</span>
           </div>
         </div>
       </div>

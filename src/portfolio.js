@@ -225,24 +225,26 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Salesforce Intern",
-      company: "IT NetworkZ",
-      companylogo: require("./assets/images/networkzlogo.png"),
-      date: "Jan 2024 – Feb 2024",
+      role: "Software Developer",
+      company: "Project Tech4Dev",
+      companylogo: require("./assets/images/tech4devlogo.png"),
+      companyUrl: "https://www.linkedin.com/company/project-tech4dev/",
+      date: "June 2025 – Present",
       desc: "",
       descBullets: [
-        "Created Objects, fields, and Relationships.Implemented Various Profiles and Layouts",
-        "Executed various rules, workflows, triggers, and controllers to align with specific business requirements",
-        "Developed comprehensive reports, dynamic dashboards, and efficient processes to ensure continuous monitoring of data quality and integrity.",
-        "Managed data loads, including setting up and overseeing security measures, user permissions, password resets, and break/fix instructions.",
-      "Ensured sustained security through the implementation of sharing rules and security levels"
-      
+        "Contributed to the Sashakt Assessment Platform, designing fast and reliable REST APIs with FastAPI.",
+        "Boosted quality and stability by writing Pytest test suites, managing smooth database migrations with Alembic, and improving test coverage.",
+        "Built frontend components using Svelte and SvelteKit, integrating them with backend APIs to deliver smooth user experiences. Added Vitest-based frontend tests to catch UI issues during development.",
+        "Collaborated with the team through pull requests and code reviews, and used Docker to streamline deployment.",
+        "Created and managed views in BigQuery and developed interactive dashboards in Looker Studio for data visualization, performance tracking, and insight generation.",
+        "Implemented role-based access control (RBAC) to ensure safe access for different users such as super admin, state admin, admins and candidates on the platform."
       ]
     },
     {
       role: "React Inter",
       company: "SoftCorner",
       companylogo: require("./assets/images/softcornerlogo.png"),
+      companyUrl: "https://www.linkedin.com/company/soft-corner/",
       date: "Dec 2023 – Jan 2024",
       desc: "",
       descBullets: [ 
@@ -256,19 +258,6 @@ const workExperiences = {
 
 
 
-      ]
-    
-    },
-    {
-      role: "Front End Developer",
-      company: "Bharat Intern",
-      companylogo: require("./assets/images/bhaaratinternlogo.png"),
-      date: "May  2023 – Sep 2023",
-      desc: "",
-      descBullets: [
-"Web-Based Project Management Tool: Developed a comprehensive web-based tool using HTML, CSS, and JavaScript to streamline project planning, task assignment, and progress tracking. Implemented intuitive user interfaces and interactive features to enhance team collaboration and productivity.",
-      " Online Meeting and Webinar Platform (Conferencing Website): Spearheaded the development of a robust online meeting and webinar platform using HTML, CSS, and JavaScript.Designed and implemented user-friendly interfaces, real-time chat functionalities, and interactive whiteboards to facilitate engaging online interactions."
-      
       ]
     
     }

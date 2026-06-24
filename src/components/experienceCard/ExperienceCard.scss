@@ -79,7 +79,7 @@
 
 .experience-roundedimg {
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
   left: 0;
   right: 0;
   top: 7rem;
@@ -89,6 +89,8 @@
   height: 8rem;
   box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
   border-radius: 50%;
+  background: #fff;
+  padding: 0.5rem;
 }
 
 .experience-text-role {
@@ -137,6 +139,7 @@
   .experience-roundedimg {
     width: 6.5rem;
     height: 6.5rem;
+    padding: 0.4rem;
   }
 }
 

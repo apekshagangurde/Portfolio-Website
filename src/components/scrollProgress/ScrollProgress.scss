@@ -1,0 +1,18 @@
+@import "../../_globalColor";
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 10001;
+}
+
+.scroll-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, $buttonColor, $skillsColor, #8c43ce);
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}

@@ -157,6 +157,19 @@
   top: 0;
 }
 
+/* Active nav link */
+
+.header li a.active-nav {
+  color: $buttonColor !important;
+  font-weight: 600;
+  border-bottom: 2px solid $buttonColor;
+}
+
+.dark-menu li a.active-nav {
+  color: #a78bfa !important;
+  border-bottom: 2px solid #a78bfa;
+}
+
 /* 48em = 768px */
 
 @media (min-width: 48em) {

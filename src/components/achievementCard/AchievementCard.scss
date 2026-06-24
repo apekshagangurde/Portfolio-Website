@@ -37,8 +37,18 @@
 .certificate-card:hover {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
 }
+.dark-mode.certificate-card {
+  background-color: $darkBackground;
+  border-color: rgba(255, 255, 255, 0.1);
+}
 .dark-mode.certificate-card:hover {
   box-shadow: $achievementCertificateCardHoverDark 0px 20px 30px -10px;
+}
+.dark-mode .card-title {
+  color: $textColorDark;
+}
+.dark-mode .card-subtitle {
+  color: $subTitle;
 }
 .certificate-image-div {
   position: relative;

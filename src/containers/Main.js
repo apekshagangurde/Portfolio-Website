@@ -21,6 +21,7 @@ import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import CustomCursor from "../components/customCursor/CustomCursor";
 import StatsCounter from "./statsCounter/StatsCounter";
+import GithubContributions from "./githubContributions/GithubContributions";
 import "./Main.scss";
 
 const Main = () => {
@@ -62,6 +63,7 @@ const Main = () => {
             <WorkExperience />
             <Projects />
             <StartupProject />
+            <GithubContributions />
             <Achievement />
             <Blogs />
             <Talks />

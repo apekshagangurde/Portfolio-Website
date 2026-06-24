@@ -42,6 +42,19 @@ export default function Greeting() {
                 />
                 {" "}{emoji("🚀")}
               </p>
+              {greeting.currentlyWorkingOn && (
+                <a
+                  href={greeting.currentlyWorkingOnUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="currently-working-on-link"
+                >
+                  <div className="currently-working-on">
+                    <span className="status-dot"></span>
+                    <span className="status-text">{greeting.currentlyWorkingOn}</span>
+                  </div>
+                </a>
+              )}
               <SocialMedia />
               {/* <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />

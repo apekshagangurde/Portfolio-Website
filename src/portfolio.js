@@ -27,6 +27,8 @@ const greeting = {
   ),
   subTitlePlain:
     "A Full Stack Developer who doesn't just use AI — I build with it, ship with it, and push its limits every day. I turn wild ideas into real-world web & mobile apps, powered by code and supercharged by intelligence.",
+  currentlyWorkingOn: "Building Sashakt Assessment Platform @ Project Tech4Dev",
+  currentlyWorkingOnUrl: "https://projecttech4dev.org/making-assessments-easier-with-sashakt/",
   resumeLink:
     "https://drive.google.com/file/d/1Co10jIUl5W1M3IbXRdLBgGTjPUvswT4X/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -245,7 +247,7 @@ const workExperiences = {
       ]
     },
     {
-      role: "React Inter",
+      role: "React Intern",
       company: "SoftCorner",
       companylogo: require("./assets/images/softcornerlogo.png"),
       companyUrl: "https://www.linkedin.com/company/soft-corner/",
@@ -273,7 +275,7 @@ To know how to get github key look at readme.md */
 
 const openSource = {
   showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on

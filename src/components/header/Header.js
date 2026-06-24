@@ -1,7 +1,6 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
-// import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
 import {
   greeting,
@@ -15,12 +14,43 @@ import {
 
 function Header() {
   const {isDark} = useContext(StyleContext);
+  const [activeSection, setActiveSection] = useState("");
+
   const viewExperience = workExperiences.display;
   const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
+
+  useEffect(() => {
+    const sections = [
+      "skills",
+      "experience",
+      "opensource",
+      "achievements",
+      "blogs",
+      "talks",
+      "contact"
+    ];
+
+    const handleScroll = () => {
+      let current = "";
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 150) {
+            current = id;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, {passive: true});
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Headroom>
@@ -41,42 +71,37 @@ function Header() {
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skills" className={activeSection === "skills" ? "active-nav" : ""}>Skills</a>
             </li>
           )}
           {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a href="#experience" className={activeSection === "experience" ? "active-nav" : ""}>Work Experiences</a>
             </li>
           )}
           {viewOpenSource && (
             <li>
-              <a href="#opensource">Open Source</a>
+              <a href="#opensource" className={activeSection === "opensource" ? "active-nav" : ""}>Open Source</a>
             </li>
           )}
           {viewAchievement && (
             <li>
-              <a href="#achievements">Achievements</a>
+              <a href="#achievements" className={activeSection === "achievements" ? "active-nav" : ""}>Achievements</a>
             </li>
           )}
           {viewBlog && (
             <li>
-              <a href="#blogs">Blogs</a>
+              <a href="#blogs" className={activeSection === "blogs" ? "active-nav" : ""}>Blogs</a>
             </li>
           )}
           {viewTalks && (
             <li>
-              <a href="#talks">Talks</a>
+              <a href="#talks" className={activeSection === "talks" ? "active-nav" : ""}>Talks</a>
             </li>
           )}
           <li>
-            <a href="#contact">Contact Me</a>
+            <a href="#contact" className={activeSection === "contact" ? "active-nav" : ""}>Contact Me</a>
           </li>
-          {/* <li>
-            <a>
-              <ToggleSwitch />
-            </a>
-          </li> */}
         </ul>
       </header>
     </Headroom>

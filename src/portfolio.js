@@ -49,15 +49,7 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle: "Full Stack Developer — Building with AI, Shipping with Intelligence 🚀",
-  skills: [
-    emoji(
-      "⚡ Building modern web apps with Svelte, SvelteKit & JavaScript"
-    ),
-    emoji("⚡ Proficient in Python, C++ and AI-powered development with LangChain"),
-    emoji(
-      "⚡ Writing rock-solid tests with Pytest & Vitest"
-    )
-  ],
+  skills: [],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
@@ -369,17 +361,22 @@ const blogSection = {
   displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
-      url: "",
-      title: "Inside the Nation-Level Kavach Hackathon: My Experience",
+      url: "https://projecttech4dev.org/sashakt-2-0-is-here-and-assessments-just-got-a-whole-lot-better/",
+      title: "Sashakt 2.0 is Here, and Assessments Just Got a Whole Lot Better",
       description:
-        "Navigating challenges, innovating solutions – my journey at the Nation-Level Kavach Hackathon. Discover how we fortified cybersecurity in the digital landscape, one hack at a time."
+        "A major update to the open-source assessment platform — introducing seven new question types, multimedia support, multilingual test-taking, customizable certificates, and enhanced admin controls."
     },
     {
-      url: "",
-      title: "Rajasthan IT Day Hackathon: A Tech Expedition",
+      url: "https://projecttech4dev.org/sashakt-a-deep-dive-into-the-open-source-assessment-platform/",
+      title: "Sashakt: A Deep Dive into the Open-Source Assessment Platform",
       description:
-        "Dive into the heart of innovation at the Rajasthan IT Day Hackathon, where ideas transform into digital realities. Explore the journey of collaboration, creativity, and cutting-edge solutions in the vibrant landscape of Rajasthan."
-
+        "Exploring the technical architecture and design of Sashakt — its multi-tenant structure, five core components, and how organizations leverage it for large-scale field assessments across India."
+    },
+    {
+      url: "https://medium.com/@apekshagangurde08/my-journey-with-sashkt-building-learning-and-innovating-e55a0d7d0f58",
+      title: "My Journey with Sashakt: Building, Learning, and Innovating",
+      description:
+        "My experience developing the Sashakt assessment tool at Tech4Dev — building intelligent time management, smart copy functionality, bulk uploads with robust validation, and a dynamic tagging system."
     }
   ],
   display: true // Set false to hide this section, defaults to true

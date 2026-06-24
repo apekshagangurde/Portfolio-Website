@@ -168,27 +168,25 @@ https://fontawesome.com/icons?d=gallery */
 // Education Section
 
 const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
+  display: true,
   schools: [
-    
     {
       schoolName: "K.K.Wagh Institute of Engineering, Education And Research, Nashik",
       logo: require("./assets/images/kkwlogo.png"),
-      subHeader: "Bachelor of Technology- Artificial Intelligence And Data Science",
-      duration: "September 2021 - April 2025",
-      desc: "CGPA:8.05/10 ",
-      descBullets: ["Took courses about Software Engineering, Data Structures and Algorithms, Operating Systems, Computer Networks, Database Management Systems, Artificial Intelligence, Data Science, Artificial Neural Networks, Statistics,Web Technology"]
-    },
-    {
-      schoolName: "K.R.A Arts Science and Commerce College, Deola",
-      logo: require("./assets/images/kralogo.png"),
-      subHeader: "HSC ",
-      duration: "September 2017 - April 2019",
-      desc: "(Percentage: 89.83",
-      descBullets: [
-        
+      subHeader: "Bachelor of Technology — Artificial Intelligence & Data Science",
+      duration: "Sept 2021 — Apr 2025",
+      desc: "CGPA: 8.05 / 10",
+      highlights: [
+        "AI & Data Science",
+        "Software Engineering",
+        "DSA",
+        "Computer Networks",
+        "DBMS",
+        "Neural Networks",
+        "Statistics",
+        "Web Technology"
       ]
-    },
+    }
   ]
 };
 
@@ -306,7 +304,7 @@ const bigProjects = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Achievement Section

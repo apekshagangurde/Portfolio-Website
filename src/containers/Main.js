@@ -20,6 +20,7 @@ import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import CustomCursor from "../components/customCursor/CustomCursor";
+import CommandPalette from "../components/commandPalette/CommandPalette";
 import StatsCounter from "./statsCounter/StatsCounter";
 import GithubContributions from "./githubContributions/GithubContributions";
 import "./Main.scss";
@@ -54,6 +55,7 @@ const Main = () => {
         ) : (
           <div className="main-content-enter">
             <CustomCursor />
+            <CommandPalette />
             <Header />
             <Greeting />
             <Skills />

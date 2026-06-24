@@ -1,47 +1,341 @@
 @import "../../_globalColor";
 
-.achievement-heading {
+.unlock-section {
+  width: 90%;
+  max-width: 850px;
+  margin: 3rem auto;
+}
+
+.unlock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.unlock-heading {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 56px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0px;
+  font-weight: 700;
   background: $headingGradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
   padding: 0.15em 0;
+  line-height: 1.2;
+  margin: 0;
 }
-.dark-mode .achievement-heading {
+
+.dark-mode .unlock-heading {
   background: $headingGradientDark;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.achievement-subtitle {
-  text-transform: uppercase;
-  margin: 0px;
-  margin-bottom: 50px;
-}
-.subTitle {
-  color: $subTitle;
+
+.unlock-xp-total {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 189, 46, 0.1);
+  border: 1px solid rgba(255, 189, 46, 0.25);
+  border-radius: 50px;
+  padding: 8px 18px;
 }
 
-/* Media Query */
+.unlock-xp-icon {
+  font-size: 16px;
+}
+
+.unlock-xp-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #d4a017;
+}
+
+// Card list
+.unlock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+// Card
+.unlock-card {
+  position: relative;
+  background: $lightBackground2;
+  border: 1px solid $lightBorder1;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  transform: translateX(60px);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.unlock-card-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.unlock-card-dark {
+  background: #1e1e2e;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.unlock-card:hover {
+  box-shadow: 0 8px 30px rgba(85, 25, 139, 0.12);
+  transform: translateX(0) translateY(-3px);
+}
+
+.unlock-card-dark:hover {
+  box-shadow: 0 8px 30px rgba(167, 139, 250, 0.12);
+}
+
+// Glow
+.unlock-card-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.06), transparent);
+  animation: none;
+  pointer-events: none;
+}
+
+.unlock-card-visible .unlock-card-glow {
+  animation: glowSweep 1s 0.3s ease forwards;
+}
+
+@keyframes glowSweep {
+  from { left: -60%; }
+  to { left: 120%; }
+}
+
+// Top bar
+.unlock-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(85, 25, 139, 0.06), rgba(100, 91, 235, 0.04));
+  border-bottom: 1px solid rgba(85, 25, 139, 0.08);
+}
+
+.unlock-card-dark .unlock-top-bar {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.08), rgba(129, 140, 248, 0.04));
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.unlock-badge-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unlock-lock-icon {
+  font-size: 16px;
+}
+
+.unlock-badge-text {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: $buttonColor;
+  text-transform: uppercase;
+}
+
+.unlock-card-dark .unlock-badge-text {
+  color: #a78bfa;
+}
+
+.unlock-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.unlock-xp {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #d4a017;
+}
+
+.unlock-stars {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+// Content
+.unlock-content {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.unlock-image-wrap {
+  flex-shrink: 0;
+  width: 240px;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.unlock-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.unlock-card:hover .unlock-image {
+  transform: scale(1.08);
+}
+
+.unlock-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.unlock-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.unlock-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: $textColor;
+  margin: 0;
+}
+
+.dark-mode .unlock-title {
+  color: $textColorDark;
+}
+
+// Rarity badges
+.unlock-rarity {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.unlock-rarity-legendary {
+  background: linear-gradient(135deg, #ff8c00, #ffd700);
+  color: #1a1a1a;
+}
+
+.unlock-rarity-epic {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: #fff;
+}
+
+.unlock-rarity-rare {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: #fff;
+}
+
+.unlock-rarity-mythic {
+  background: linear-gradient(135deg, #ec4899, #f472b6);
+  color: #fff;
+}
+
+.unlock-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: $cardSubtitle;
+  margin: 0 0 10px;
+}
+
+.dark-mode .unlock-desc {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.unlock-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: $buttonColor;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $skillsColor;
+  }
+}
+
+.dark-mode .unlock-link {
+  color: #a78bfa;
+
+  &:hover {
+    color: #c4b5fd;
+  }
+}
+
+// Progress bar
+.unlock-progress-bar {
+  height: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.unlock-card-dark .unlock-progress-bar {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.unlock-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, $buttonColor, #22c55e);
+  border-radius: 0 3px 3px 0;
+  transition: width 1s ease 0.5s;
+}
+
+.unlock-progress-complete {
+  width: 100%;
+}
+
+// Responsive
 @media (max-width: 1380px) {
-  .achievement-heading {
+  .unlock-heading {
     font-size: 40px;
   }
 }
+
 @media (max-width: 768px) {
-  .achievement-heading {
+  .unlock-heading {
     font-size: 30px;
-    text-align: center;
   }
-  .achievement-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
+
+  .unlock-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .unlock-content {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .unlock-image-wrap {
+    width: 100%;
+    height: 150px;
+  }
+
+  .unlock-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }

@@ -4,6 +4,41 @@
   width: 90%;
   max-width: 850px;
   margin: 3rem auto;
+  text-align: center;
+}
+
+.blogs-section-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  background: $headingGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  padding: 0.15em 0;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.dark-mode .blogs-section-heading {
+  background: $headingGradientDark;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blogs-section-subtitle {
+  color: $subTitle;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1380px) {
+  .blogs-section-heading { font-size: 40px; }
+}
+@media (max-width: 768px) {
+  .blogs-section-heading { font-size: 30px; }
 }
 
 .newspaper {

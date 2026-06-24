@@ -26,6 +26,10 @@ export default function Blogs() {
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="newspaper-section" id="blogs">
+        <h1 className="blogs-section-heading">Blogs</h1>
+        <p className={isDark ? "dark-mode blogs-section-subtitle" : "blogs-section-subtitle"}>
+          With love for developing cool stuff, I love to write and teach others what I have learnt.
+        </p>
         <div className={isDark ? "newspaper newspaper-dark" : "newspaper"}>
           <div className="newspaper-header">
             <div className="newspaper-rule"></div>

@@ -1,9 +1,32 @@
 @import "../../_globalColor";
 
+.talk-header {
+  text-align: center;
+}
+
 .talk-header-title {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 56px;
-  font-weight: 400;
-  line-height: 0px;
+  font-weight: 700;
+  background: $headingGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  padding: 0.15em 0;
+  line-height: 1.2;
+}
+
+.dark-mode .talk-header-title {
+  background: $headingGradientDark;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.talk-header-subtitle {
+  max-width: 600px;
+  margin: 0 auto 2rem;
 }
 
 .talk-cards-div {
@@ -16,14 +39,18 @@
   color: $subTitle;
 }
 
+@media (max-width: 1380px) {
+  .talk-header-title {
+    font-size: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .talk-header-title {
-    font-size: 20px;
-    text-align: center;
+    font-size: 30px;
   }
   .talk-header-subtitle {
     font-size: 16px;
     line-height: normal;
-    text-align: center;
   }
 }

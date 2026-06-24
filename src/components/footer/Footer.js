@@ -9,15 +9,6 @@ export default function Footer() {
   return (
     <Fade bottom duration={1000} distance="5px">
       <div className="footer-div">
-        <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-          {emoji("Made with ❤️ Apeksha Gangurde")}
-        </p>
-        <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-          Theme by{" "}
-          <a href="https://github.com/apekshagangurde">
-            Apeksha Gangurde
-          </a>
-        </p>
       </div>
     </Fade>
   );

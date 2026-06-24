@@ -195,7 +195,7 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: false, //Set it to true to show Proficiency Section
   experience: [
     {
       Stack: "DSA",
@@ -313,49 +313,34 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
+  title: emoji("Achievements 🏆 "),
   subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+    "Some cool stuff that I have done!",
 
   achievementsCards: [
     {
-      title: "AI Tool workshop",
+      title: "Kavach Grand Finale",
       subtitle:
-        "Completed AI tool workshop, adept at crafting innovative solutions for complex problems.",
-      image: require("./assets/images/be10xlogo.png"),
-      imageAlt: "Be10x logo Logo",
+        "Honored to have been a part of the Kavach Grand Finale — a national-level hackathon that pushed me to give my best. Gained invaluable experience in problem-solving, teamwork, and building innovative solutions under pressure.",
+      image: require("./assets/images/kavach-finale.png"),
+      imageAlt: "Kavach 2023 Grand Finale",
       footerLink: [
         {
-          name: "Certification",
-          url: "https://storage.googleapis.com/be10x-bucket/certs/apekshagangurde08_gmail_com_20231017062839.pdf"
-        },
-        
-      ]
-    },
-    {
-      title: "React.js workshop",
-      subtitle:
-        "Equipped with React workshop completion, skilled in developing modern, responsive web applications.",
-      image: require("./assets/images/techpathashala logo.jpg"),
-      imageAlt: "React.js workshop Logo",
-      footerLink: [
-        {
-          name: "Certification",
-          url: ""
+          name: "Read More",
+          url: "https://www.linkedin.com/posts/apeksha-gangurde-924b4a230_kavachexperience-keeppushingforward-share-7096110216861122560-ReQf/"
         }
       ]
     },
-
     {
-      title: "Visualizing IPL Teams Performance using Power BI",
-      subtitle: "Proficient in leveraging Power BI to visualize IPL team performance data, with a certificate attesting to mastery in data visualization and analytics.",
-      image: require("./assets/images/great learning logo.png"),
-      imageAlt: "GreatLearning Logo",
+      title: "Rajasthan IT Day Hackathon",
+      subtitle:
+        "Participated in the Rajasthan IT Day Hackathon and built a Women Empowerment website to support and uplift needy women — combining tech skills with social impact.",
+      image: require("./assets/images/rajasthan-itday-hackathon.png"),
+      imageAlt: "Rajasthan IT Day Hackathon",
       footerLink: [
-        {name: "Certification", url: ""},
         {
-          name: "Final Project",
-          url: ""
+          name: "Read More",
+          url: "https://www.linkedin.com/posts/apeksha-gangurde-924b4a230_rajasthanltday-pwskills-niveditavibhandik-activity-7044347203896713216-3Ry1/"
         }
       ]
     }
@@ -418,7 +403,7 @@ const podcastSection = {
   podcast: [
     ""
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 const contactInfo = {

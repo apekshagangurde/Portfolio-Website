@@ -5,7 +5,6 @@ import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
 import TypingAnimation from "../../components/typingAnimation/TypingAnimation";
 
 import {illustration, greeting} from "../../portfolio";
@@ -44,7 +43,7 @@ export default function Greeting() {
                 {" "}{emoji("🚀")}
               </p>
               <SocialMedia />
-              <div className="button-greeting-div">
+              {/* <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <Button
@@ -53,7 +52,7 @@ export default function Greeting() {
                     href={greeting.resumeLink}
                   />
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="greeting-image-div">

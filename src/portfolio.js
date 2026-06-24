@@ -23,7 +23,7 @@ const greeting = {
   username: "Apeksha Gangurde",
   title: "Hi all, I'm Apeksha",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "A Full Stack Developer who doesn't just use AI — I build with it, ship with it, and push its limits every day. I turn wild ideas into real-world web & mobile apps, powered by code and supercharged by intelligence. 🚀"
   ),
   resumeLink:
     "https://drive.google.com/file/d/1Co10jIUl5W1M3IbXRdLBgGTjPUvswT4X/view?usp=sharing", // Set to empty to hide the button
@@ -46,14 +46,14 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "Passionate Full Stack Software Developer 🚀",
+  subTitle: "Full Stack Developer — Building with AI, Shipping with Intelligence 🚀",
   skills: [
     emoji(
-      "⚡Skilled in building Web applications with JavaScript, React.js, and other frameworks. "
+      "⚡ Building modern web apps with Svelte, SvelteKit & JavaScript"
     ),
-    emoji("⚡Proficient in Python and C++ programming languages"),
+    emoji("⚡ Proficient in Python, C++ and AI-powered development with LangChain"),
     emoji(
-      "⚡ Keenly interested in working on Salesforce solutions"
+      "⚡ Writing rock-solid tests with Pytest & Vitest"
     )
   ],
 
@@ -63,64 +63,103 @@ https://fontawesome.com/icons?d=gallery */
   softwareSkills: [
     {
       skillName: "Git",
-      fontAwesomeClassname: "fab fa-html5"
+      imageSrc: "/icons/git.svg",
+      docLink: "https://git-scm.com/doc"
     },
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-git"
-      
+      skillName: "HTML5",
+      imageSrc: "/icons/html5.svg",
+      docLink: "https://developer.mozilla.org/en-US/docs/Web/HTML"
     },
     {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
+      skillName: "CSS3",
+      imageSrc: "/icons/css3.svg",
+      docLink: "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
+      skillName: "Python",
+      imageSrc: "/icons/python.svg",
+      docLink: "https://docs.python.org/3/"
     },
     {
       skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
+      imageSrc: "/icons/javascript.svg",
+      docLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
+      skillName: "Svelte",
+      imageSrc: "/icons/svelte.svg",
+      docLink: "https://svelte.dev/docs"
     },
     {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
+      skillName: "SvelteKit",
+      imageSrc: "/icons/sveltekit.svg",
+      docLink: "https://kit.svelte.dev/docs"
     },
     {
-      skillName: "figma",
-      fontAwesomeClassname: "fab fa-figma"
+      skillName: "Figma",
+      imageSrc: "/icons/figma.svg",
+      docLink: "https://help.figma.com/"
     },
     {
       skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
+      imageSrc: "/icons/npm.svg",
+      docLink: "https://docs.npmjs.com/"
     },
     {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
+      skillName: "SQL",
+      imageSrc: "/icons/sql.svg",
+      docLink: "https://dev.mysql.com/doc/"
     },
     {
-      skillName: "bootstrap",
-      fontAwesomeClassname: "fab fa-bootstrap"
+      skillName: "Bootstrap",
+      imageSrc: "/icons/bootstrap.svg",
+      docLink: "https://getbootstrap.com/docs/"
     },
     {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
+      skillName: "Firebase",
+      imageSrc: "/icons/firebase.svg",
+      docLink: "https://firebase.google.com/docs"
     },
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
+      skillName: "Pytest",
+      imageSrc: "/icons/pytest.svg",
+      docLink: "https://docs.pytest.org/"
     },
     {
-      skillName: "salesforce",
-      fontAwesomeClassname: "fab fa-salesforce"
+      skillName: "Vitest",
+      imageSrc: "/icons/vitest.svg",
+      docLink: "https://vitest.dev/guide/"
     },
     {
-      skillName: "php",
-      fontAwesomeClassname: "fab fa-php"
+      skillName: "LangChain",
+      imageSrc: "/icons/langchain.svg",
+      docLink: "https://python.langchain.com/docs/"
+    },
+    {
+      skillName: "TypeScript",
+      imageSrc: "/icons/typescript.svg",
+      docLink: "https://www.typescriptlang.org/docs/"
+    },
+    {
+      skillName: "Looker Studio",
+      imageSrc: "/icons/lookerstudio.svg",
+      docLink: "https://support.google.com/looker-studio/"
+    },
+    {
+      skillName: "Docker",
+      imageSrc: "/icons/docker.svg",
+      docLink: "https://docs.docker.com/"
+    },
+    {
+      skillName: "Pydantic",
+      imageSrc: "/icons/pydantic.svg",
+      docLink: "https://docs.pydantic.dev/"
+    },
+    {
+      skillName: "Playwright",
+      imageSrc: "/icons/playwright.svg",
+      docLink: "https://playwright.dev/docs/intro"
     }
   ],
   display: true // Set false to hide this section, defaults to true

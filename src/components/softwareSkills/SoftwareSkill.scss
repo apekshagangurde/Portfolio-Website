@@ -29,3 +29,19 @@
 .software-skill-inline > i:hover ~ p {
   color: $skillsColor;
 }
+
+.skill-image {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.software-skill-inline:hover .skill-image {
+  transform: scale(1.15);
+}
+
+.skill-link {
+  text-decoration: none;
+  display: inline-block;
+}

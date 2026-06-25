@@ -6,7 +6,6 @@ import StyleContext from "../../contexts/StyleContext";
 
 const rarities = ["LEGENDARY", "EPIC", "RARE", "MYTHIC"];
 const xpValues = [500, 400, 350, 300];
-const stars = [3, 2, 2, 1];
 
 export default function Achievement() {
   const {isDark} = useContext(StyleContext);
@@ -56,8 +55,6 @@ export default function Achievement() {
         {achievementSection.achievementsCards.map((card, i) => {
           const isUnlocked = i < unlockedCount;
           const rarity = rarities[i] || "RARE";
-          const xp = xpValues[i] || 300;
-          const starCount = stars[i] || 1;
 
           return (
             <div

@@ -1,6 +1,5 @@
-import React, {useContext} from "react";
+import React from "react";
 import {Fade} from "react-reveal";
-import emoji from "react-easy-emoji";
 import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
@@ -8,10 +7,8 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Terminal from "../../components/terminal/Terminal";
 
 import {illustration, greeting} from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
-  const {isDark} = useContext(StyleContext);
   if (!greeting.displayGreeting) {
     return null;
   }

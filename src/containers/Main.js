@@ -27,8 +27,7 @@ import GithubContributions from "./githubContributions/GithubContributions";
 import "./Main.scss";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  const [isDark, setIsDark] = useLocalStorage("isDark", true);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
 
